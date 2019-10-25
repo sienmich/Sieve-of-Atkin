@@ -1,6 +1,13 @@
-cmake_minimum_required(VERSION 3.15)
 project(Sieve_of_Atkin)
 
-set(CMAKE_CXX_STANDARD 17)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
+set(CMAKE_CXX_STANDARD 11)
 
 add_executable(Sieve_of_Atkin main.cpp sieve.cpp sieve.h)
