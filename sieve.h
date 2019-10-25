@@ -7,6 +7,6 @@
 #ifndef SIEVE_OF_ATKIN_SIEVE_H
 #define SIEVE_OF_ATKIN_SIEVE_H
 
-std::vector<int>& primes(int bound);
+std::vector<long long> primes(long long bound);
 
 #endif //SIEVE_OF_ATKIN_SIEVE_H
