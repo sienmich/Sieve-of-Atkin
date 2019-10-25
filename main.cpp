@@ -9,8 +9,8 @@
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     long long bound;
     int n;
@@ -19,22 +19,12 @@ int main() {
     for(int i = 0; i < n; i++)
         cin >> query[i];
 
+    /// Counting minimal number of necessary primes.
     auto primesVec = primes(*max_element(query.begin(), query.end()));
 
+    /// Binary searching primes smaller than query.
     for (auto &q : query)
         cout << upper_bound(primesVec.begin(), primesVec.end(), q) - primesVec.begin()  << "\n";
 
     return 0;
 }
-
-/**
-10
-7
-1
-2
-3
-4
-5
-6
-7
-*/
